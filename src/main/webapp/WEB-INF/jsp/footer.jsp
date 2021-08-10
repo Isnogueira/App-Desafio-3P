@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,12 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<hr>
+<br>
 <body>
- <c:import url="/WEB-INF/jsp/menu.jsp"/>
-<div class="container text-center">
-    <h3>Filmes : ${filmes.size()}</h3>
-    <table class="table-striped">
-    </table>
-</div>
+    <footer class="container-fluid bg-2 text-center">
+        <p>&copy Ingrid Nogueira 2021</p>
+       <a href="https://github.com/Isnogueira/App-Desafio-3P">Github do projeto</a>
+    </footer>
 </body>
-</html>

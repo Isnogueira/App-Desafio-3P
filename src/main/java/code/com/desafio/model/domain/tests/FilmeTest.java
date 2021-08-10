@@ -1,14 +1,12 @@
 package code.com.desafio.model.domain.tests;
 
-import code.com.desafio.model.domain.Flix;
+import code.com.desafio.model.domain.Filme;
 
-public class FlixTest {
+public class FilmeTest {
 
     public static void main(String[] args) {
 
-        Flix flix = new Flix();
-        flix.setNome("Star wars - Uma nova esperança");
-        flix.setGenero("ficção científica");
+        Filme flix = new Filme("Star wars - Uma nova esperança", "ficção científica");
         flix.setDiretor("George lucas");
         flix.setElenco("Mark Hammil, Harrison Ford, " +
                 "Carrie Fisher, Alec Guinness," +

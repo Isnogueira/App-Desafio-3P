@@ -64,5 +64,10 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<br>
+ <div class="container text-center">
+    <p>Aqui vai o corpo da página</p>
+</div>
+ <c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

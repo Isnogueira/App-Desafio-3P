@@ -1,6 +1,6 @@
 package code.com.desafio.model.domain;
 
-public class Flix {
+public class Filme {
 
     private String nome;
     private String genero;
@@ -10,6 +10,11 @@ public class Flix {
     private String sinopse;
     private float valor;
     private boolean brasileiro;
+
+    public Filme(String nome, String genero) {
+        this.nome = nome;
+        this.genero = genero;
+    }
 
     public String getNome() {
         return nome;
@@ -27,48 +32,24 @@ public class Flix {
         this.genero = genero;
     }
 
-    public String getDiretor() {
-        return diretor;
-    }
-
     public void setDiretor(String diretor) {
         this.diretor = diretor;
-    }
-
-    public String getElenco() {
-        return elenco;
     }
 
     public void setElenco(String elenco) {
         this.elenco = elenco;
     }
 
-    public int getAnoEstreia() {
-        return anoEstreia;
-    }
-
     public void setAnoEstreia(int anoEstreia) {
         this.anoEstreia = anoEstreia;
-    }
-
-    public String getSinopse() {
-        return sinopse;
     }
 
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
     }
 
-    public float getValor() {
-        return valor;
-    }
-
     public void setValor(float valor) {
         this.valor = valor;
-    }
-
-    public boolean isBrasileiro() {
-        return brasileiro;
     }
 
     public void setBrasileiro(boolean brasileiro) {
@@ -77,7 +58,7 @@ public class Flix {
 
     @Override
     public String toString() {
-        return "Flix{" +
+        return "Filme{" +
                 "\nnome='" + nome + "," +
                 "\ngenero='" + genero + "," +
                 "\ndiretor='" + diretor + "," +
