@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,8 +15,8 @@
  <c:import url="/WEB-INF/jsp/menu.jsp"/>
 <div class="container text-center">
     <h3>My flix</h3>
-    <p><em>Sua plataforma de filmes e séries</em></p>
-    <p>Armazene seus filmes e suas séries para ver quando quiser!</p>
+    <p><em>Sua plataforma de filmes</em></p>
+    <p>Armazene seus filmes para ver quando quiser!</p>
 </div>
 <br>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -66,7 +66,7 @@
 </div>
 <br>
  <div class="container text-center">
-    <p>Aqui vai o corpo da página</p>
+    <p>Aqui vai o corpo da pagina</p>
 </div>
  <c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>

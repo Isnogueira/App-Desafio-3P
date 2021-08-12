@@ -1,6 +1,6 @@
-package code.com.desafio.model.domain.tests;
+package code.com.desafio.domain.tests;
 
-import code.com.desafio.model.domain.Filme;
+import code.com.desafio.domain.model.Filme;
 
 public class FilmeTest {
 
@@ -21,7 +21,7 @@ public class FilmeTest {
                 "da super arma do Império, Estrela da Morte, roubado pelos rebeldes e inserido no droid " +
                 "por sua líder, Princesa Léia (Carrie Fisher), que espera destruir o Império e salvar a galáxia");
         flix.setValor(20);
-        flix.setBrasileiro(false);
+        flix.setBrasileiro("Não");
 
         System.out.println(flix);
     }

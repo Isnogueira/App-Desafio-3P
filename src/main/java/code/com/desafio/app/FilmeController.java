@@ -1,16 +1,22 @@
 package code.com.desafio.app;
 
-import code.com.desafio.model.domain.Filme;
+import code.com.desafio.service.FilmeService;
+import code.com.desafio.domain.model.Filme;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
+
 
 @Controller
 public class FilmeController {
+
+    @Autowired
+    private FilmeService filmeService;
 
     @GetMapping (value="/")
     public String inicializa(){
@@ -26,15 +32,27 @@ public class FilmeController {
     @PostMapping(value="/filme/incluir")
     public String incluir(Model model, Filme filme) {
 
-        model.addAttribute("mensagem", "O filme " + filme.getNome() + " cadastrado com sucesso!");
+      filmeService.incluir(filme);
+
+        model.addAttribute("mensagem",   filme.getNome() + " cadastrado com sucesso!");
 
         return obterLista(model);
     }
 
-    @GetMapping(value="/filme/excluir")
-    public String excluir(Model model){
+    @GetMapping(value="/filme/{id}/excluir")
+    public String excluir(Model model, @PathVariable Integer id){
 
-        model.addAttribute("mensagem", "Filme excluído com sucesso!");
+        Optional<Filme> filmeExcluido = filmeService.obterPorId(id);
+
+        String msg = "Não foi possível realizar a exclusão.";
+
+        if(filmeExcluido.isPresent()){
+            filmeService.excluir(id);
+            Filme filme = filmeExcluido.get();
+            msg = filme.getNome() + " foi excluído com sucesso!";
+        }
+
+        model.addAttribute("mensagem",  msg);
 
         return obterLista(model);
     }
@@ -48,14 +66,7 @@ public class FilmeController {
     @GetMapping(value="/filme/lista")
     public String obterLista(Model model){
 
-        List<Filme> colecaoFilmes = new ArrayList<>();
-        colecaoFilmes.add(new Filme("Invocação do mal", "Terror"));
-        colecaoFilmes.add(new Filme("Homem de ferro", "Ação/ficcion"));
-        colecaoFilmes.add(new Filme("Doutor Estranho", "Ação/ficcion"));
-        colecaoFilmes.add(new Filme("A múmia", "Aventura"));
-        colecaoFilmes.add(new Filme("As patricinhas de Bervely Hills", "Romance"));
-
-        model.addAttribute("filmes", colecaoFilmes);
+        model.addAttribute("filmes", filmeService.obterLista());
 
         return "filme/lista";
     }

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -34,23 +34,23 @@
     <br>
     </div>
     <div class="container">
-        <label for="diretor">Diretor:</label>
+        <label for="diretor">Direção:</label>
         <input type="text" class="form-control" id="diretor"  name="diretor">
     </div>
     <br>
     <div class="container">
         <label for="elenco">Elenco:</label>
-        <textarea class="form-control" rows="5" id="elenco"></textarea>
+        <textarea class="form-control" rows="5" id="elenco" name="elenco"></textarea>
     </div>
     <br>
     <div class="container">
-        <label for="ano">Ano:</label>
-        <input type="number" class="form-control" id="ano"  name="ano">
+        <label for="anoEstreia">Ano:</label>
+        <input type="number" class="form-control" id="anoEstreia"  name="anoEstreia">
     </div>
     <br>
     <div class="container">
         <label for="sinopse">Sinopse:</label>
-        <textarea class="form-control" rows="5" id="sinopse"></textarea>
+        <textarea class="form-control" rows="5" id="sinopse" name="sinopse"></textarea>
     </div>
     <br>
     <div class="container">
@@ -59,12 +59,12 @@
     </div>
     <br>
     <div class="container">
-        <p><b>O filme e brasileiro?</b></p>
+        <p><b>O filme é brasileiro?</b></p>
         <label class="radio-inline">
-            <input type="radio" name="brasileiro?" value="sim" checked>Sim
+            <input type="radio" name="brasileiro" value="sim" checked>Sim
         </label>
         <label class="radio-inline">
-            <input type="radio" name="brasileiro?" value="nao">Nao
+            <input type="radio" name="brasileiro" value="nao">Não
         </label>
     </div>
     <br>

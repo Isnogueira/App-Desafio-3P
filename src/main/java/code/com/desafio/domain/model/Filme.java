@@ -1,7 +1,15 @@
-package code.com.desafio.model.domain;
+package code.com.desafio.domain.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Filme {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String nome;
     private String genero;
     private String diretor;
@@ -9,11 +17,30 @@ public class Filme {
     private int anoEstreia;
     private String sinopse;
     private float valor;
-    private boolean brasileiro;
+    private String brasileiro;
+
+    public Filme() {
+        this.diretor = "Não informado";
+        this.elenco = "Não informado";
+        this.anoEstreia = 0;
+        this.sinopse = "Não informada";
+        this.valor = 0;
+        this.brasileiro = "Não informado";
+    }
 
     public Filme(String nome, String genero) {
+
+        super();
         this.nome = nome;
         this.genero = genero;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -52,7 +79,8 @@ public class Filme {
         this.valor = valor;
     }
 
-    public void setBrasileiro(boolean brasileiro) {
+    public void setBrasileiro(String brasileiro) {
+
         this.brasileiro = brasileiro;
     }
 

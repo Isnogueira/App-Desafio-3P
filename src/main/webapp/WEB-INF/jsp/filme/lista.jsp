@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -15,8 +15,8 @@
  <c:import url="/WEB-INF/jsp/menu.jsp"/>
 <div class="container">
     <c:if test="${not empty mensagem}">
-        <div class="alert alert-success">
-          <strong>Sucesso!</strong> ${mensagem}
+        <div class="alert alert-info">
+          <strong>Info!</strong> ${mensagem}
         </div>
     </c:if>
     <c:if test="${not empty filmes}">
@@ -27,17 +27,19 @@
         <table class="table table-striped">
             <thead>
               <tr>
-                <th>Titulo</th>
+                <th>ID</th>
+                <th>Título</th>
                 <th>Genero</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-                <c:forEach var="filme" items="${filmes}">
+                <c:forEach var="filme" items="${filmes}" varStatus="id">
                       <tr>
+                        <td>${filme.id}</td>
                         <td>${filme.nome}</td>
                         <td>${filme.genero}</td>
-                        <td><a href="/filme/excluir">Excluir</a></td>
+                        <td><a href="/filme/${filme.id}/excluir">Excluir</a></td>
                         <td><a href="/filme/consultar">Detalhes</a></td>
                       </tr>
                 </c:forEach>
@@ -46,7 +48,8 @@
     </c:if>
     <c:if test="${empty filmes}">
          <div class="container">
-            <h3>Nao existem filmes cadastrados!</h3>
+            <h3>Não existem filmes cadastrados!</h3>
+            <a href="/filme/cadastro">Incluir</a>
          </div>
      </c:if>
 </div>
