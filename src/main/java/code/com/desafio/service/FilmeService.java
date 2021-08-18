@@ -3,6 +3,7 @@ package code.com.desafio.service;
 import code.com.desafio.domain.model.Filme;
 import code.com.desafio.repository.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
@@ -15,9 +16,14 @@ public class FilmeService {
     @Autowired
     FilmeRepository filmeRepository;
 
+    public List<Filme> obterLista(String campo) {
+
+        return (List<Filme>) filmeRepository.findAll(Sort.by(Sort.Direction.ASC,campo));
+    }
+
     public List<Filme> obterLista() {
 
-        return (List<Filme>) filmeRepository.findAll();
+        return (List<Filme>) filmeRepository.findAll(Sort.by(Sort.Direction.ASC,"nome"));
     }
 
     public void incluir(Filme filme) {

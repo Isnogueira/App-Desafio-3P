@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class FilmeController {
     public String inicializa(){
         return "index";
     }
+
 
     @GetMapping (value="/filme/cadastro")
     public String telaCadastro(){
@@ -57,17 +59,37 @@ public class FilmeController {
         return obterLista(model);
     }
 
-    @GetMapping(value="/filme/consultar")
-    public String cousultar(){
+    @GetMapping(value="/filme/{id}/consultar")
+    public String consultar(Model model, @PathVariable Integer id){
 
-        return "filme/consultar";
+        Optional<Filme> filme = filmeService.obterPorId(id);
+
+        model.addAttribute("meuFilme", filme);
+
+        return telaCadastro();
     }
 
     @GetMapping(value="/filme/lista")
     public String obterLista(Model model){
 
-        model.addAttribute("filmes", filmeService.obterLista());
+        model.addAttribute("filmes", filmeService.obterLista("nome"));
+
+        return "filme/lista";
+    }
+
+    @GetMapping(value = "/voltar")
+    public String voltar(){
+        return "redirect:/filme/lista";
+    }
+
+
+    @PostMapping(value = "time/ordenar")
+    public String ordenar(Model model, @RequestParam String sortBy){
+
+        model.addAttribute("filmes", filmeService.obterLista(sortBy));
 
         return "filme/lista";
     }
 }
+
+

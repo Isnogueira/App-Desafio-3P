@@ -1,9 +1,6 @@
 package code.com.desafio.domain.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Filme {
@@ -15,6 +12,7 @@ public class Filme {
     private String diretor;
     private String elenco;
     private int anoEstreia;
+    @Column(name="sinopse", nullable=false, length=2000)
     private String sinopse;
     private float valor;
     private String brasileiro;
@@ -87,14 +85,15 @@ public class Filme {
     @Override
     public String toString() {
         return "Filme{" +
-                "\nnome='" + nome + "," +
-                "\ngenero='" + genero + "," +
-                "\ndiretor='" + diretor + "," +
-                "\nelenco='" + elenco + "," +
-                "\nanoEstreia=" + anoEstreia + "," +
-                "\nsinopse='" + sinopse + "," +
-                "\nvalor=" + valor + "," +
-                "\nbrasileiro=" + brasileiro + "\n" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", genero='" + genero + '\'' +
+                ", diretor='" + diretor + '\'' +
+                ", elenco='" + elenco + '\'' +
+                ", anoEstreia=" + anoEstreia +
+                ", sinopse='" + sinopse + '\'' +
+                ", valor=" + valor +
+                ", brasileiro='" + brasileiro + '\'' +
                 '}';
     }
 }

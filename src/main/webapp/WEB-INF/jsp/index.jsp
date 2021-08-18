@@ -65,9 +65,6 @@
     </a>
 </div>
 <br>
- <div class="container text-center">
-    <p>Aqui vai o corpo da pagina</p>
-</div>
  <c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>
