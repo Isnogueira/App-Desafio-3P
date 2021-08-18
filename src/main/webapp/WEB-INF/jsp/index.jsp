@@ -30,7 +30,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="/img/netflix.jpg" alt="netflix">
+            <img src="/img/netflix.jpg" alt="netflix" style="width:100%;">
             <div class="carousel-caption">
                 <!--<h3>New York</h3>
                 <p>The atmosphere in New York is lorem ipsum.</p>-->
@@ -38,7 +38,7 @@
         </div>
 
         <div class="item">
-            <img src="/img/controle.jpg" alt="controle">
+            <img src="/img/controle.jpg" alt="controle" style="width:100%;">
             <div class="carousel-caption">
                 <!--<h3>Chicago</h3>
                  <p>Thank you, Chicago - A night we won't forget.</p>-->
@@ -46,7 +46,7 @@
         </div>
 
         <div class="item">
-            <img src="img/homemcelular.jpg" alt="homem">
+            <img src="img/homemcelular.jpg" alt="homem" style="width:100%;">
             <div class="carousel-caption">
                 <!--<h3>LA</h3>
                 <p>Even though the traffic was a mess, we had the best time.</p>-->
