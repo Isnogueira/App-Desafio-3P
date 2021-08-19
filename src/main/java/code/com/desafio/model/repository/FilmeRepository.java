@@ -1,6 +1,6 @@
-package code.com.desafio.repository;
+package code.com.desafio.model.repository;
 
-import code.com.desafio.domain.model.Filme;
+import code.com.desafio.model.domain.Filme;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.CrudRepository;
 

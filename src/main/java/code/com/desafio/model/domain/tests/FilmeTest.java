@@ -1,6 +1,6 @@
-package code.com.desafio.domain.tests;
+package code.com.desafio.model.domain.tests;
 
-import code.com.desafio.domain.model.Filme;
+import code.com.desafio.model.domain.Filme;
 
 public class FilmeTest {
 

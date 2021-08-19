@@ -1,4 +1,4 @@
-package code.com.desafio.domain.model;
+package code.com.desafio.model.domain;
 
 import javax.persistence.*;
 

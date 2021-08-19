@@ -1,7 +1,7 @@
-package code.com.desafio.app;
+package code.com.desafio.controller;
 
-import code.com.desafio.service.FilmeService;
-import code.com.desafio.domain.model.Filme;
+import code.com.desafio.model.service.FilmeService;
+import code.com.desafio.model.domain.Filme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

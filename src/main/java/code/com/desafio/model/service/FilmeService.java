@@ -1,7 +1,7 @@
-package code.com.desafio.service;
+package code.com.desafio.model.service;
 
-import code.com.desafio.domain.model.Filme;
-import code.com.desafio.repository.FilmeRepository;
+import code.com.desafio.model.domain.Filme;
+import code.com.desafio.model.repository.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
