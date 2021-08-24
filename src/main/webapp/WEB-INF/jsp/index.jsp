@@ -65,6 +65,9 @@
     </a>
 </div>
 <br>
+<div class="container text-center">
+    <h2>Bem vindo(a) ${user.nome}</h2>
+</div>
  <c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

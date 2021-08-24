@@ -19,7 +19,7 @@ public class FilmeController {
     @Autowired
     private FilmeService filmeService;
 
-    @GetMapping (value="/")
+    @GetMapping (value="/index")
     public String inicializa(){
         return "index";
     }
@@ -28,7 +28,7 @@ public class FilmeController {
     @GetMapping (value="/filme/cadastro")
     public String telaCadastro(){
 
-        return "filme/cadastro";
+        return "/filme/cadastro";
     }
 
     @PostMapping(value="/filme/incluir")
@@ -74,7 +74,7 @@ public class FilmeController {
 
         model.addAttribute("filmes", filmeService.obterLista("nome"));
 
-        return "filme/lista";
+        return "/filme/lista";
     }
 
     @GetMapping(value = "/voltar")
@@ -88,7 +88,7 @@ public class FilmeController {
 
         model.addAttribute("filmes", filmeService.obterLista(sortBy));
 
-        return "filme/lista";
+        return "/filme/lista";
     }
 }
 
