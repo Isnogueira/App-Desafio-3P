@@ -18,12 +18,17 @@ public class AcessoController {
     private UsuarioService usuarioService;
 
     @GetMapping(value = "/")
+    public String telaHome() {
+        return "/index";
+    }
+
+    @GetMapping(value = "/login")
     public String telaLogin() {
         return "/login";
     }
 
     @PostMapping(value = "/login")
-    public String Login(Model model, @RequestParam String email, String senha) {
+    public String login(Model model, @RequestParam String email, String senha) {
 
         Usuario usuario = usuarioService.validar(email, senha);
 
@@ -31,7 +36,7 @@ public class AcessoController {
 
             model.addAttribute("user", usuario);
 
-            return "/index";
+            return "/filme/lista";
 
         } else {
 

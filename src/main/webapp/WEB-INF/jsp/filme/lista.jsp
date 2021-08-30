@@ -22,6 +22,10 @@
         </div>
     </c:if>
     <c:if test="${not empty filmes}">
+        <div class="container">
+            <h2>Bem vindo(a) ${user.nome}</h2>
+        </div>
+        <br>
         <h2>Listagem de filmes: ${filmes.size()}</h2>
         <div class="container">
           <form action="/time/ordenar" method="post">
@@ -62,6 +66,10 @@
             </div>
     </c:if>
     <c:if test="${empty filmes}">
+        <div class="container">
+            <h2>Bem vindo(a) ${user.nome}</h2>
+        </div>
+        <br>
          <div class="container">
             <h3>Não existem filmes cadastrados!</h3>
              <a href="/filme/cadastro" class="btn btn-default btn-lg">Incluir</a>
