@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface FilmeRepository extends CrudRepository<Filme, Integer> {
 
-    public List<Filme> findAll(Sort sort);
+    List<Filme> findAll(Sort sort);
 }

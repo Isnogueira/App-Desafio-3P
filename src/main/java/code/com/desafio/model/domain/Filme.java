@@ -1,20 +1,34 @@
 package code.com.desafio.model.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
+@ToString
 public class Filme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter @Setter
     private Integer id;
+    @Getter @Setter
     private String nome;
+    @Getter @Setter
     private String genero;
+    @Getter @Setter
     private String diretor;
+    @Getter @Setter
     private String elenco;
+    @Getter @Setter
     private int anoEstreia;
+    @Getter @Setter
     @Column(name="sinopse", nullable=false, length=2000)
     private String sinopse;
+    @Getter @Setter
     private float valor;
+    @Getter @Setter
     private String brasileiro;
 
     public Filme() {
@@ -33,67 +47,4 @@ public class Filme {
         this.genero = genero;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public void setDiretor(String diretor) {
-        this.diretor = diretor;
-    }
-
-    public void setElenco(String elenco) {
-        this.elenco = elenco;
-    }
-
-    public void setAnoEstreia(int anoEstreia) {
-        this.anoEstreia = anoEstreia;
-    }
-
-    public void setSinopse(String sinopse) {
-        this.sinopse = sinopse;
-    }
-
-    public void setValor(float valor) {
-        this.valor = valor;
-    }
-
-    public void setBrasileiro(String brasileiro) {
-
-        this.brasileiro = brasileiro;
-    }
-
-    @Override
-    public String toString() {
-        return "Filme{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", genero='" + genero + '\'' +
-                ", diretor='" + diretor + '\'' +
-                ", elenco='" + elenco + '\'' +
-                ", anoEstreia=" + anoEstreia +
-                ", sinopse='" + sinopse + '\'' +
-                ", valor=" + valor +
-                ", brasileiro='" + brasileiro + '\'' +
-                '}';
-    }
 }
